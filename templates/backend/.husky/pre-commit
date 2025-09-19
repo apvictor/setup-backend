@@ -1,0 +1,13 @@
+#!/bin/sh
+branch=$(git symbolic-ref --short HEAD)
+
+if [ "$branch" = "master" ]; then
+  echo "❌ Não é permitido fazer push na branch master!"
+  exit 1
+fi
+
+echo "🔍 Verificando o código com ESLint..."
+npm run lint
+
+echo "⚙️ Executando o build do projeto..."
+npm run build
