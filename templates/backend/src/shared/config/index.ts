@@ -1,4 +1,4 @@
-import { PrismaService } from '@/shared/services/prisma.service';
+import { PrismaService } from '@/http/services/prisma.service';
 
 import { env } from './env';
 

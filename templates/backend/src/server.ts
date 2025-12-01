@@ -1,11 +1,10 @@
 import { app } from './app';
-import { checkDatabaseConnection, getHost } from './config';
-import { env } from './config/env';
+import { checkDatabaseConnection, getHost } from './shared/config';
+import { env } from './shared/config/env';
 
 const host = getHost();
 
-checkDatabaseConnection().then(() => {
-  app.listen(env.SERVER_PORT, () =>
-    console.info(`🚀 Servidor executando ${host}`),
-  );
+app.listen(env.SERVER_PORT, async () => {
+  await checkDatabaseConnection();
+  console.info(`🚀 Servidor executando ${host}`);
 });

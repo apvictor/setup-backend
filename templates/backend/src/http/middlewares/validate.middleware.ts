@@ -3,7 +3,8 @@
 import { NextFunction, Request, Response } from 'express';
 import { Schema, ValidationError } from 'yup';
 
-import { InternalServerError } from '@/config/errors/api-error';
+import { InternalServerError } from '@/shared/config/errors/api-error';
+
 
 export const ValidateMiddleware =
   (schema: Schema) =>

@@ -2,9 +2,10 @@ import cors from 'cors';
 import express, { Response } from 'express';
 import { serve, setup } from 'swagger-ui-express';
 
-import { ErrorHandler } from './config/errors/error-handler';
-import swaggerFile from './config/swagger/swagger_output.json';
-import { api } from './routes/api';
+import swaggerFile from '@/shared/config/swagger/swagger_output.json';
+
+import { api } from './http/routes/api';
+import { ErrorHandler } from './shared/config/errors/error-handler';
 
 export const app = express();
 

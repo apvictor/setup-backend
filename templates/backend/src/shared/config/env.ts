@@ -11,7 +11,7 @@ const envSchema = yup.object({
     .default(3000),
   SERVER_HOST: yup.string().default('localhost'),
 
-  JWT_SECRET: yup.string().required(),
+  JWT_SECRET: yup.string(),
 
   DB_USER: yup.string(),
   DB_HOST: yup.string(),
